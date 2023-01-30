@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
+                            Vào cửa hàng trên ứng dụng F8-Shop
+
+                            <!-- Header QR code -->
+                            <div class="header__qr">
+                                <img src="./assets/img/qr_code.png" alt="qr code" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="#" class="header__qr-link">
+                                        <img src="./assets/img/app_store.png" alt="app store" class="header__qr-dowload-img">
+                                    </a>
+                                    <a href="#" class="header__qr-link">
+                                        <img src="./assets/img/google_play.png" alt="google play" class="header__qr-dowload-img">
+                                    </a>                                   
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-item--no-pointer">Kết nối</span>
+                            <a class="header__navbar-icon-link" href="#">
+                                <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a class="header__navbar-icon-link" href="#">
+                                <i class="header__navbar-icon fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-notify">
+                            <a href="#" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-regular fa-bell"></i>
+                                Thông báo
+                            </a>
+                            <div class="header__notify">
+                                <header class="header__notify-header">
+                                    <h3>Thông Báo Mới Nhận</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                    <li class="header__notify-item">
+                                        <a href="#" class="header__notify-link">
+                                            <img class="header__notify-img" src="data:image/jpeg;base64,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" alt="">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm Ohui chính hãng có bán tại các hiệu thuốc trên khắp thế giới</span>
+                                                <span class="header__notify-desc">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item">
+                                        <a href="#" class="header__notify-link header__notify-item--unviewed">
+                                            <img class="header__notify-img" src="./assets/img/ball.png">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Mỹ phẩm Ohui chính hãng rất bổ ích và đặc biệt, phù hợp mọi lứa tuổi</span>
+                                                <span class="header__notify-desc">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="header__notify-item">
+                                        <a href="#" class="header__notify-link">
+                                            <img class="header__notify-img" src="./assets/img/screen.png">
+                                            <div class="header__notify-info">
+                                                <span class="header__notify-name">Các mỹ phẩm Ohui chính hãng đến từ Việt Nam kính mong quý khách dùng</span>
+                                                <span class="header__notify-desc">Mô tả mỹ phẩm Ohui chính hãng</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="#" class="header__notify-footer-btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a href="#" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-regular fa-circle-question"></i>
+                                Trợ giúp
+                            </a>
+                        </li>
+                        <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
+                        <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li> -->
+                        <li class="header__navbar-item header__navbar-user">
+                            <img src="./assets/img/avatar.jpg" alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name">Đức Thắng</span>
+
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item">
+                                    <a href="#">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="#">Địa chỉ của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="#">Đơn mua</a>
+                                </li>
+                                <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                    <a href="#">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- chia lam nhieu block con (BEM), ko can phai? coi chi? co 1 block lam __ thi class se rat dai`giong nhu header__navbar -->
+                <!-- Header with search -->
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <!-- user an vao -> ve trang chu? -->
+                        <a href="/" class="header__logo-link">
+                            <svg viewBox="0 0 192 65" class="header__logo-img">
+                                <g fill-rule="evenodd">
+                                    <path fill="#fff"
+                                        d="M35.6717403 44.953764c-.3333497 2.7510509-2.0003116 4.9543414-4.5823845 6.0575984-1.4379707.6145919-3.36871.9463856-4.896954.8421628-2.3840266-.0911143-4.6237865-.6708937-6.6883352-1.7307424-.7375522-.3788551-1.8370513-1.1352759-2.6813095-1.8437757-.213839-.1790053-.239235-.2937577-.0977428-.4944671.0764015-.1151823.2172535-.3229831.5286218-.7791994.45158-.6616533.5079208-.7446018.5587128-.8221779.14448-.2217688.3792333-.2411091.6107855-.0588804.0243289.0189105.0243289.0189105.0426824.0333083.0379873.0294402.0379873.0294402.1276204.0990653.0907002.0706996.14448.1123887.166248.1287205 2.2265285 1.7438508 4.8196989 2.7495466 7.4376251 2.8501162 3.6423042-.0496401 6.2615109-1.6873341 6.7308041-4.2020035.5160305-2.7675977-1.6565047-5.1582742-5.9070334-6.4908212-1.329344-.4166762-4.6895175-1.7616869-5.3090528-2.1250697-2.9094471-1.7071043-4.2697358-3.9430584-4.0763845-6.7048539.296216-3.8283059 3.8501677-6.6835796 8.340785-6.702705 2.0082079-.004083 4.0121475.4132378 5.937338 1.2244562.6816382.2873109 1.8987274.9496089 2.3189359 1.2633517.2420093.1777159.2898136.384872.1510957.60836-.0774686.12958-.2055158.3350171-.4754821.7632974l-.0029878.0047276c-.3553311.5640922-.3664286.5817134-.447952.7136572-.140852.2144625-.3064598.2344475-.5604202.0732783-2.0600669-1.3839063-4.3437898-2.0801572-6.8554368-2.130442-3.126914.061889-5.4706057 1.9228561-5.6246892 4.4579402-.0409751 2.2896772 1.676352 3.9613243 5.3858811 5.2358503 7.529819 2.4196871 10.4113092 5.25648 9.869029 9.7292478M26.3725216 5.42669372c4.9022893 0 8.8982174 4.65220288 9.0851664 10.47578358H17.2875686c.186949-5.8235807 4.1828771-10.47578358 9.084953-10.47578358m25.370857 11.57065968c0-.6047069-.4870064-1.0948761-1.0875481-1.0948761h-11.77736c-.28896-7.68927544-5.7774923-13.82058185-12.5059489-13.82058185-6.7282432 0-12.2167755 6.13130641-12.5057355 13.82058185l-11.79421958.0002149c-.59136492.0107446-1.06748731.4968309-1.06748731 1.0946612 0 .0285807.00106706.0569465.00320118.0848825H.99995732l1.6812605 37.0613963c.00021341.1031483.00405483.2071562.01173767.3118087.00170729.0236381.003628.0470614.00554871.0704847l.00362801.0782207.00405483.004083c.25545428 2.5789222 2.12707837 4.6560709 4.67201764 4.7519129l.00576212.0055872h37.4122078c.0177132.0002149.0354264.0004298.0531396.0004298.0177132 0 .0354264-.0002149.0531396-.0004298h.0796027l.0017073-.0015043c2.589329-.0706995 4.6867431-2.1768587 4.9082648-4.787585l.0012805-.0012893.0017073-.0350275c.0021341-.0275062.0040548-.0547975.0057621-.0823037.0040548-.065757.0068292-.1312992.0078963-.1964115l1.8344904-37.207738h-.0012805c.001067-.0186956.0014939-.0376062.0014939-.0565167M176.465457 41.1518926c.720839-2.3512494 2.900423-3.9186779 5.443734-3.9186779 2.427686 0 4.739107 1.6486899 5.537598 3.9141989l.054826.1556978h-11.082664l.046506-.1512188zm13.50267 3.4063683c.014933.0006399.014933.0006399.036906.0008531.021973-.0002132.021973-.0002132.044372-.0008531.53055-.0243144.950595-.4766911.950595-1.0271786 0-.0266606-.000853-.0496953-.00256-.0865936.000427-.0068251.000427-.020262.000427-.0635588 0-5.1926268-4.070748-9.4007319-9.09145-9.4007319-5.020488 0-9.091235 4.2081051-9.091235 9.4007319 0 .3871116.022399.7731567.067838 1.1568557l.00256.0204753.01408.1013102c.250022 1.8683731 1.047233 3.5831812 2.306302 4.9708108-.00064-.0006399.00064.0006399.007253.0078915 1.396026 1.536289 3.291455 2.5833031 5.393601 2.9748936l.02752.0053321v-.0027727l.13653.0228215c.070186.0119439.144211.0236746.243409.039031 2.766879.332724 5.221231-.0661182 7.299484-1.1127057.511777-.2578611.971928-.5423827 1.37064-.8429007.128211-.0968312.243622-.1904632.34346-.2781231.051412-.0452164.092372-.083181.114131-.1051493.468898-.4830897.498124-.6543572.215249-1.0954297-.31146-.4956734-.586228-.9179769-.821744-1.2675504-.082345-.1224254-.154023-.2267215-.214396-.3133151-.033279-.0475624-.033279-.0475624-.054399-.0776356-.008319-.0117306-.008319-.0117306-.013866-.0191956l-.00256-.0038391c-.256208-.3188605-.431565-.3480805-.715933-.0970445-.030292.0268739-.131624.1051493-.14997.1245582-1.999321 1.775381-4.729508 2.3465571-7.455854 1.7760208-.507724-.1362888-.982595-.3094759-1.419919-.5184948-1.708127-.8565509-2.918343-2.3826022-3.267563-4.1490253l-.02752-.1394881h13.754612zM154.831964 41.1518926c.720831-2.3512494 2.900389-3.9186779 5.44367-3.9186779 2.427657 0 4.739052 1.6486899 5.537747 3.9141989l.054612.1556978h-11.082534l.046505-.1512188zm13.502512 3.4063683c.015146.0006399.015146.0006399.037118.0008531.02176-.0002132.02176-.0002132.044159-.0008531.530543-.0243144.950584-.4766911.950584-1.0271786 0-.0266606-.000854-.0496953-.00256-.0865936.000426-.0068251.000426-.020262.000426-.0635588 0-5.1926268-4.070699-9.4007319-9.091342-9.4007319-5.020217 0-9.091343 4.2081051-9.091343 9.4007319 0 .3871116.022826.7731567.068051 1.1568557l.00256.0204753.01408.1013102c.250019 1.8683731 1.04722 3.5831812 2.306274 4.9708108-.00064-.0006399.00064.0006399.007254.0078915 1.396009 1.536289 3.291417 2.5833031 5.393538 2.9748936l.027519.0053321v-.0027727l.136529.0228215c.070184.0119439.144209.0236746.243619.039031 2.766847.332724 5.22117-.0661182 7.299185-1.1127057.511771-.2578611.971917-.5423827 1.370624-.8429007.128209-.0968312.243619-.1904632.343456-.2781231.051412-.0452164.09237-.083181.11413-.1051493.468892-.4830897.498118-.6543572.215246-1.0954297-.311457-.4956734-.586221-.9179769-.821734-1.2675504-.082344-.1224254-.154022-.2267215-.21418-.3133151-.033492-.0475624-.033492-.0475624-.054612-.0776356-.008319-.0117306-.008319-.0117306-.013866-.0191956l-.002346-.0038391c-.256419-.3188605-.431774-.3480805-.716138-.0970445-.030292.0268739-.131623.1051493-.149969.1245582-1.999084 1.775381-4.729452 2.3465571-7.455767 1.7760208-.507717-.1362888-.982582-.3094759-1.419902-.5184948-1.708107-.8565509-2.918095-2.3826022-3.267311-4.1490253l-.027733-.1394881h13.754451zM138.32144123 49.7357905c-3.38129629 0-6.14681004-2.6808521-6.23169343-6.04042014v-.31621743c.08401943-3.35418649 2.85039714-6.03546919 6.23169343-6.03546919 3.44242097 0 6.23320537 2.7740599 6.23320537 6.1960534 0 3.42199346-2.7907844 6.19605336-6.23320537 6.19605336m.00172791-15.67913203c-2.21776751 0-4.33682838.7553485-6.03989586 2.140764l-.19352548.1573553V34.6208558c0-.4623792-.0993546-.56419733-.56740117-.56419733h-2.17651376c-.47409424 0-.56761716.09428403-.56761716.56419733v27.6400724c0 .4539841.10583425.5641973.56761716.5641973h2.17651376c.46351081 0 .56740117-.1078454.56740117-.5641973V50.734168l.19352548.1573553c1.70328347 1.3856307 3.82234434 2.1409792 6.03989586 2.1409792 5.27140956 0 9.54473746-4.2479474 9.54473746-9.48802964 0-5.239867-4.2733279-9.48781439-9.54473746-9.48781439M115.907646 49.5240292c-3.449458 0-6.245805-2.7496948-6.245805-6.1425854 0-3.3928907 2.79656-6.1427988 6.245805-6.1427988 3.448821 0 6.24538 2.7499081 6.24538 6.1427988 0 3.3926772-2.796346 6.1425854-6.24538 6.1425854m.001914-15.5438312c-5.28187 0-9.563025 4.2112903-9.563025 9.4059406 0 5.1944369 4.281155 9.4059406 9.563025 9.4059406 5.281657 0 9.562387-4.2115037 9.562387-9.4059406 0-5.1946503-4.280517-9.4059406-9.562387-9.4059406M94.5919049 34.1890939c-1.9281307 0-3.7938902.6198995-5.3417715 1.7656047l-.188189.1393105V23.2574169c0-.4254677-.1395825-.5643476-.5649971-.5643476h-2.2782698c-.4600414 0-.5652122.1100273-.5652122.5643476v29.2834155c0 .443339.1135587.5647782.5652122.5647782h2.2782698c.4226187 0 .5649971-.1457701.5649971-.5647782v-9.5648406c.023658-3.011002 2.4931278-5.4412923 5.5299605-5.4412923 3.0445753 0 5.516841 2.4421328 5.5297454 5.4630394v9.5430935c0 .4844647.0806524.5645628.5652122.5645628h2.2726775c.481764 0 .565212-.0824666.565212-.5645628v-9.5710848c-.018066-4.8280677-4.0440197-8.7806537-8.9328471-8.7806537M62.8459442 47.7938061l-.0053397.0081519c-.3248668.4921188-.4609221.6991347-.5369593.8179812-.2560916.3812097-.224267.551113.1668119.8816949.91266.7358184 2.0858968 1.508535 2.8774525 1.8955369 2.2023021 1.076912 4.5810275 1.646045 7.1017886 1.6975309 1.6283921.0821628 3.6734936-.3050536 5.1963734-.9842376 2.7569891-1.2298679 4.5131066-3.6269626 4.8208863-6.5794607.4985136-4.7841067-2.6143125-7.7747902-10.6321784-10.1849709l-.0021359-.0006435c-3.7356476-1.2047686-5.4904836-2.8064071-5.4911243-5.0426086.1099976-2.4715346 2.4015793-4.3179454 5.4932602-4.4331449 2.4904317.0062212 4.6923065.6675996 6.8557356 2.0598624.4562232.2767364.666607.2256796.9733188-.172263.035242-.0587797.1332787-.2012238.543367-.790093l.0012815-.0019308c.3829626-.5500403.5089793-.7336731.5403767-.7879478.258441-.4863266.2214903-.6738208-.244985-1.0046173-.459427-.3290803-1.7535544-1.0024722-2.4936356-1.2978721-2.0583439-.8211991-4.1863175-1.2199998-6.3042524-1.1788111-4.8198184.1046878-8.578747 3.2393171-8.8265087 7.3515337-.1572005 2.9703036 1.350301 5.3588174 4.5000778 7.124567.8829712.4661613 4.1115618 1.6865902 5.6184225 2.1278667 4.2847814 1.2547527 6.5186944 3.5630343 6.0571315 6.2864205-.4192725 2.4743234-3.0117991 4.1199394-6.6498372 4.2325647-2.6382344-.0549182-5.2963324-1.0217793-7.6043603-2.7562084-.0115337-.0083664-.0700567-.0519149-.1779185-.1323615-.1516472-.1130543-.1516472-.1130543-.1742875-.1300017-.4705335-.3247898-.7473431-.2977598-1.0346184.1302162-.0346012.0529875-.3919333.5963776-.5681431.8632459"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
+                            
+                            <!-- Search history -->
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="#">Lót chuột</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="#">Màn hình máy tính</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- coi day la 1 block -->
+                        <div class="header__search-select"> 
+                            <span class="header__search-select-lable">Trong Shop</span>
+                            <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+                            <!-- coi day la 1 block con, de ko dat ten class qua dai`-->
+                            <ul class="header__search-option">
+                                <li class="header__search-option-item header__search-option-item--active">
+                                    <span>Ngoài Shop</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                                <li class="header__search-option-item">
+                                    <span>Cạnh Shop</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="header__search-btn">
+                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart layout -->
+                    <div class="header__cart">
+                        <div class="header__cart-wrap">
+                            <i class="header__cart-icon fa-solid fa-cart-flatbed"></i>
+                            <span class="header__cart-notice">3</span>
+                        
+                            <!-- No cart: header__cart-list--no-cart -->
+                            <div class="header__cart-list">
+                                <img src="./assets/img/no_cart.png" alt="" class="header__cart-no-cart-img">
+                                <span class="header__cart-list-no-cart-msg">
+                                    Chưa Có Sản Phẩm
+                                </span>
+
+                                <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                <ul class="header__cart-list-item">
+                                    <!-- Cart item -->
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/shoes.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá TF C Ronaldo</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.500.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/ball.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Quả Bóng Đá C1 số 5 Chính Hãng</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">5.910.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/screen.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Màn hình Dahua 24'</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.490.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/shoes.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá TF C Ronaldo</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.500.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/ball.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Quả Bóng Đá C1 số 5 Chính Hãng</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">5.910.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/screen.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Màn hình Dahua 24'</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.490.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/shoes.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá TF C Ronaldo</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.500.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/ball.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Quả Bóng Đá C1 số 5 Chính Hãng</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">5.910.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/screen.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Màn hình Dahua 24'</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.490.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/shoes.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Giày bóng đá TF C Ronaldo</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.500.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/ball.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Quả Bóng Đá C1 số 5 Chính Hãng số 5 Chính Hãng số 5 Chính Hãng số 5 Chính Hãng số 5 Chính Hãng</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">5.910.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="header__cart-item">
+                                        <img src="./assets/img/screen.png" alt="" class="header__cart-img">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Màn hình Dahua 24'</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">3.490.000đ</span>
+                                                    <span class="header__cart-item-multiply">x</span>
+                                                    <span class="header__cart-item-qnt">1</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-desc">
+                                                    Phân loại: Authentic
+                                                </span>
+                                                <span class="header__cart-item-remove">Xóa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="header__cart-footer-wrap">
+                                    <a href="https://shopee.vn/cart" class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="app__container">
+            <!-- Grid > row > column -->
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <!-- coi h3 la element cua block category -->
+                            <h3 class="category__heading">
+                                <i class="category__heading-icon fa-solid fa-list"></i>
+                                Danh mục
+                            </h3>
+                            <!-- coi ul la block rieng (block con) de tranh viec dat ten class qua dai` -->
+                            <ul class="category-list">
+                                <li class="category-item category-item--active">
+                                    <a href="#" class="category-item__link">Giày bóng đá</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Giày Nike</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Giày Adidas</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+    
+                    <div class="grid__column-10">
+                        <div class="home-filter">
+                            <span class="home-filter__label">Sắp xếp theo</span>
+                            <button class="home-filter__btn btn">Phổ biến</button>
+                            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                            <button class="home-filter__btn btn">Bán chạy</button>
+
+                            <div class="select-input">
+                                <span class="select-input__label">Giá</span>
+                                <i class="select-input__icon fa-solid fa-angle-down"></i>
+                                <!-- List options -->
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="#" class="select-input__link">Giá: Thấp đến cao</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="#" class="select-input__link">Giá: Cao đến thấp</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="home-filter__page">
+                                <span class="home-filter__page-num">
+                                    <span class="home-filter__page-current">1</span>/4
+                                </span>
+                                <div class="home-filter__page-control">
+                                    <a href="#" class="home-filter__page-btn home-filter__page-btn--disabled">
+                                        <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
+                                    </a>
+                                    <a href="#" class="home-filter__page-btn">
+                                        <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="home-product">
+                            <div class="grid__row">
+                                <!-- Product item -->
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.630.999.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="grid__column-2-4">
+                                    <a class="home-product-item" href="#">
+                                        <div class="home-product-item__img" style="background-image: url(https://cf.shopee.vn/file/9a13e9d23c33ce8e605b79e3b134b566_tn);"></div>
+                                        <h4 class="home-product-item__name">Giày bóng đá TF C Ronaldo kích thước 32-45 dành cho người lớn và trẻ em</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">3.441.000đ</span>
+                                            <span class="home-product-item__price-current">4.630.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-filled fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Mercurial</span>
+                                            <span class="home-product-item__origin-name">UK</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="paginaition home-product__paginaition">
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">
+                                    <i class="paginaition-item__icon fa-solid fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">1</a>
+                            </li>
+                            <li class="paginaition-item paginaition-item--active">
+                                <a href="#" class="paginaition-item__link">2</a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">3</a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">4</a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">5</a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">...</a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">14</a>
+                            </li>
+                            <li class="paginaition-item">
+                                <a href="#" class="paginaition-item__link">
+                                    <i class="paginaition-item__icon fa-solid fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">Trung Tâm Trợ Giúp</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">Shopee-Shop Mall</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">Hướng Dẫn Mua Hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Giới thiệu</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">Giới thiệu</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">Tuyển Dụng</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">Điều khoản</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Danh mục</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">
+                                    Bóng Đá
+                                </a>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">
+                                    Ti vi
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">
+                                    Tủ Lạnh
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Theo dõi</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="#" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-linkedin"></i>
+                                    Linkedin
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+                        <div class="footer__dowload">
+                            <img src="./assets/img/qr_code.png" alt="Dowload QR" class="footer__dowload-qr">
+                            <div class="footer__dowload-apps">
+                                <a href="#" class="footer__dowload-app-link">
+                                    <img src="./assets/img/google_play.png" alt="Google play" class="footer__dowload-app-img">
+                                </a>
+                                <a href="#" class="footer__dowload-app-link">
+                                    <img src="./assets/img/app_store.png" alt="App store" class="footer__dowload-app-img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer__bottom để xét background-color full được width-->
+            <div class="footer__bottom">
+                <!-- grid chi co nhiem vụ giúp căn lề -->
+                <div class="grid">
+                    <p class="footer__text">© 2023 - Bản quyền thuộc về Công ty TNHH Shopee</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal layout -->
+    <!-- lop modal de chiem het man hinh -->
+    <!-- <div class="modal"> -->
+        <!-- overlay de tao. lop phủ -->
+        <!-- <div class="modal__overlay"></div> -->
+        
+        <!-- <div class="modal__body">     -->
+            <!-- Authenticate (xac thuc) form -->
+            <!-- Register form -->
+            <!-- <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Ký</h3>
+                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng ký, bạn đã đồng ý với Shopee về
+                            <a href="#" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="#" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="#" class="btn auth-form__socials-facebook btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="#" class="btn auth-form__socials-google btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                        
+                    </a>
+                </div>
+            </div> -->
+            
+            <!-- Login form -->
+            <!-- <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng Nhập</h3>
+                        <span class="auth-form__switch-btn">Đăng ký</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <div class="auth-form__help">
+                            <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu</a>
+                            <span class="auth-form__help-separate"></span>
+                            <a href="#" class="auth-form__help-link">Cần trợ giúp</a>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn btn--normal auth-form__controls-back">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="#" class="btn auth-form__socials-facebook btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="#" class="btn auth-form__socials-google btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                        
+                    </a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+</html>

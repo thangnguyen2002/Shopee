@@ -1,0 +1,287 @@
+:root{
+    --primary-color: #EE4D2D;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333; 
+    /* text-color ko den xi` giong text mac dinh, doc cho do moi mat */
+    --border-color: #dbdbdb;
+    --star-gold-color: #ffce3e;
+    --primary-hover-color: #ed5c3f;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    /* để khi header-height sau này tăng thì header-with-search cũng tăng height theo, ko bị fix cứng
+    do vậy khi muốn tăng, giảm kích thước header chỉ cần chỉnh header-height là sẽ thay đổi theo */
+    --header-width-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+*{
+    box-sizing: inherit;
+    /* tat ca the html ke thua lai n~ the chua no co thuoc itnh box-sizing */
+}
+
+html {
+    /* Hack: 1rem=10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Responsive */
+/* nguyen tac theo thu tu su dung responsive */
+/* column phai nam trong row, row phai nam trong grid */
+/* .grid { 
+        .row {
+            .column {
+
+            }
+            .column {
+
+            }
+            ...
+        }
+        .row {
+            .column {
+
+            }
+            ...
+        }
+        ...
+} */
+
+.grid{
+    /* screen>1400px -> kich thuoc toi da la 1400px */
+    width: 1400px;
+    /* screen<1400px -> kich thuoc toi da la full man hinh */
+    max-width: 100%;
+    margin: 0 auto;
+    /* tu dong can giua khoi nay khi nam trong khoi khac */
+}
+
+/* trong truong hop ko muon dung width:1400px */
+.grid__full-width {
+    width: 100%; 
+}
+
+/* nhung the co class nay nam tren hang ngang, wrap: tong do dai element con vuot qua class nay bi nhay xuong hang */
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Test */
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+    /* 100% (screen size) / 2 * 100 = 16.6666% */
+}
+/* 10/5 = ty le 2 mỗi cột dựa trên số cột của cha, class 2-4 chi mang tinh chat dat khac column-2*/
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+    /* tổng cộng 100%, muốn hiển thị 5 product -> mỗi product chiếm 20%*/
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+    /* 100% (screen) / 10 * 100 = 83.3333% */
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal__overlay {
+    position: absolute;
+    /* hiểu là con của modal, lấy modal làm gốc tọa độ chính, cho width,height: 100% modal */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* z-index: 2; */
+}
+
+.modal__body {
+    /* ko cần width height nữa vì ta dựa vào ndung có bn thì width height bấy nhiêu */
+    /* width: 300px;
+    height: 300px; */
+    /* parent display: flex, child margin: auto => center */
+    margin: auto;
+    /* background-color: var(--white-color); nên bỏ màu trắng vì ko phải form nào cũng màu trắng */
+    position: relative;
+    /* thường có position mới dùng đc z-index, trong trg hợp này ko có cx dc
+    vì modal đã chiếm hết màn hình */
+    z-index: 1;
+    /* đặt gtri biến cục bộ: tức là 70% -> 100% khi scale */
+    --growth-from: 0.7;
+    --growth-to: 1;
+    animation: growth linear 0.1s;
+}
+
+/* Button Style */
+.btn {
+    min-width: 124px;
+    /* phải đặt chiều ngang tối thiểu vì có thể sau này chữ dài ra sẽ bị lỗi */
+    /* còn max-width chiều ngang tối đa thường dùng để responsive */
+    height: 34px;
+    text-decoration: none;
+    /* class btn la class dùng chung dc cho cả thẻ a, button, div,.. */
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    /* dieu chinh text center inside button */
+    display: inline-flex;
+    /* inline-flex để các button có .btn nằm ngang*/
+    align-items: center;
+    justify-content: center;
+    line-height: 0.6rem;
+    background-color: var(--white-color);
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+/* class viết liền nhau, hiểu là áp dụng cho thẻ phải có 2 class này */
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+
+/* Selection */
+.select-input {
+    position: relative;
+    width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    /* ko can de % vi it khi thay doi phan nay */
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 8px 16px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__link {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+/* Paginaition */
+.paginaition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.paginaition-item {
+    margin: 0 4px;
+}
+
+.paginaition-item--active .paginaition-item__link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.paginaition-item--active .paginaition-item__link:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.paginaition-item__link {
+    --height: 30px;
+    /* tao bien local, sau nay muon thay doi height chi can thay doi cai nay */
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 2rem;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
+}
